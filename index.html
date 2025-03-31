@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Burger Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div id="stars"></div>
+        <div class="navber">
+            <img src="logo.png" alt="">
+            <div class="center-nav">
+                <a href="">Home</a>
+                <a href="">Menu</a>
+                <a href="">about</a>
+                <a href="">shop</a>
+            </div>
+            <div class="social">
+                <a href=><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href=><i class="fa-solid fa-cart-plus"></i></a>
+                <a href=><i class="fa-solid fa-house"></i></a>
+            </div>
+        </div>
+        <div class="text">
+            <h1>THE ULIMIED <br> BURGER HAUEM</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, modi saepe alias magnam velit perferendis. Ab animi quasi, molestiae et cum voluptate iusto corrupti, est assumenda, repudiandae dolorem autem quibusdam.</p>
+            <a href="" class="btn">Order Now</a>
+            <a href="" class="btn">View Menu</a>
+        </div>
+ 
+        <div class="burger">
+            <img src="burger.png" alt="">
+            <img src="pngwing.com (12).png" alt="">
+            <img src="burger.png" alt="">
+            <img src="flying burger.png" alt="">
+            <img src="pngwing.com (16).png" alt="">
+        </div>
+
+        <div class="burger-toggle">
+            <img src="flying burger.png" alt=""class="active">
+        </div>
+
+    </header>
+    <script>
+       // Select all burger images and the toggle image
+const burgerImages = document.querySelectorAll('.burger img');
+const toggleImage = document.querySelector('.burger-toggle img');
+let currentIndex = 0;
+
+// Initialize the active burger
+toggleImage.src = burgerImages[currentIndex].src;
+toggleImage.classList.add('active');
+
+// Add click event to each burger image
+burgerImages.forEach((image, index) => {
+    image.addEventListener('click', () => {
+        // Update the toggle image
+        toggleImage.src = burgerImages[index].src;
+        currentIndex = index;
+    });
+});
+
+// Generate random stars
+function createStars() {
+    const starsContainer = document.getElementById("stars");
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+
+    for (let i = 0; i < 100; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.left = $;{Math.random() * windowWidth}px;
+        star.style.top =  $;{Math.random() * windowHeight}px;
+        starsContainer.appendChild(star);
+    }
+}
+
+// Call the createStars function when the page loads
+window.addEventListener('load', createStars);
+
+    </script>
+</body>
+</html>
